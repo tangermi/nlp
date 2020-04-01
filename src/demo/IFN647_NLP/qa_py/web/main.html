@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>QA Search</title>
+        <script type="text/javascript" src="/eel.js"></script>
+        <script>
+            async function get_result(){
+                var input_value = document.getElementById("input").value;
+                let results = await eel.py_search(input_value)();
+                let results_json = JSON.parse(results);
+                results_json = results_json[0]
+                let txt = '';
+                for (i in results_json) {
+                    txt += `<a class = 'title' href=${results_json[i].url}>${results_json[i].title}</a><p class = content>${results_json[i].content}</p>`;
+                }
+                document.getElementById('result').innerHTML = txt
+            }
+        </script>
+    </head>
+    <body>
+        <input id='input' type='text' name='input' value="sing dance rap basketball">
+        <button onclick="get_result()">search</button>
+        <div id='result'>
+
+        </div>
+    </body>
+</html>

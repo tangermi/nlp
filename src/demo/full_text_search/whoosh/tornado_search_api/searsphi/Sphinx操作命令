@@ -1,0 +1,22 @@
+
+
+# 建立主索引
+windows:    indexer.exe fake_main -c F:\python_projects\my\000\py_testing\lihao\tornado_search_api\searsphi\sphinx.conf
+linux       indexer fake_main -c /etc/sphinx/sphinx.conf
+
+# 建立增量索引
+windows:    indexer.exe fake_delta -c F:\python_projects\my\000\py_testing\lihao\tornado_search_api\searsphi\sphinx.conf
+linux       indexer fake_delta -c /etc/sphinx/sphinx.conf
+
+# 启动服务
+windows:    searchd.exe -c F:\python_projects\my\000\py_testing\lihao\tornado_search_api\searsphi\sphinx.conf
+linux       searchd -c /etc/sphinx/sphinx.conf
+
+# 合并索引
+windows:    indexer.exe -c F:\python_projects\my\000\py_testing\lihao\tornado_search_api\searsphi\sphinx.conf --merge fake_main fake_delta --rotate
+linux       indexer -c /etc/sphinx/sphinx.conf --merge fake_main fake_delta --rotate
+
+# 定时任务(linux)
+crontab -e      # 编辑任务
+    # 每5 分钟增量更新索引
+    */5 * * * * indexer fake_delta -c /etc/sphinx/sphinx.conf && indexer -c /etc/sphinx/sphinx.conf --merge fake_main fake_delta --rotate
