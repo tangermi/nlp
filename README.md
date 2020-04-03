@@ -90,62 +90,6 @@ test.py 系统测试的运行逻辑
 
 
 ### 三级目录
-#### demo 目录
-├── src  
-│   ├── demo  
-│   │   ├── _fastNLP  
-│   │   ├── _funNLP  
-│   │   ├── _hanlp  
-│   │   ├── _langid  
-│   │   ├── _matplotlib  
-│   │   ├── _numpy  
-│   │   ├── _pandas  
-│   │   ├── _pyltp  
-│   │   ├── _scipy  
-│   │   ├── _sklearn  
-│   │   ├── _snowNLP  
-│   │   ├── _stanfordNLP  
-│   │   ├── _tensorflow  
-│   │   ├── full_text_search  
-│   │   ├── IFN647_NLP  
-│   │   ├── intention  
-│   │   ├── NLP_learn  
-│   │   ├── NLPBook  
-│   │   ├── sentiment  
-│   │   ├── short_text  
-│   │   ├── text  
-│   │   ├── text_filter  
-│   │   ├── wangfeng_LSTM  
-│   │   ├── wulpus_world  
-│   │   └── __init__.py  
-
-_fastNLP 使用fastNLP作为工具，配合DPCNN神经网络对搜狗预料进行分本分类。尚未跑通，训练的第一个epoch就有bug，原因未知  
-_funNLP 对github上funNLP里的2个工具进行封装测试，一个是cocoNLP基于正则的信息提取，另一个是命名实体识别  
-_hanlp 对hanlp的各个功能进行封装以及测试，包括分词，文本分类，依存关系识别，文本摘要，word2vec等等  
-_langid 对github上一个根据文本识别对应语种的工具，进行了修改及测试  
-_matplotlib 用作测试  
-_numpy numpy各种类别的练习题，总计100个  
-_pandas pandas各种类别的练习，总计100个  
-_pyltp 对pyltp进行封装及测试  
-_scipy scipy里各种功能的测试  
-_sklearn lihang的各种关于sklearn的demo  
-_snowNLP snowNLP各种功能的demo，初看效果不如hanlp  
-_stanfordNLP 斯坦福NLP的分词demo，模型较大，分词加载较慢  
-_tensorflow tensorflow的各种机器学习demo，目前正在建设中  
-full_text_search 一些whoosh的demo  
-IFN647_NLP 一个文档搜索引擎的demo，分别使用c#的lucene.net和python的whoosh来实现  
-intention 意图识别的demo  
-NLP_learn 一本教材  
-sentiment 语义识别的demo  
-short_text 短文本聚类的demo  
-text 各种文本分类的demo，包括:  
-    1) _fastNLP 使用fastNLP作为工具，配合DPCNN神经网络对搜狗预料进行分本分类。尚未跑通，训练的第一个epoch就有bug，原因未知  
-    2) _hanlp hanlp的文本分类  
-    3) classifier 贝叶斯文本分类  
-text_filter 本文过滤的demo  
-wangfeng_LSTM 使用LSTM模型，以汪峰歌词作为语料进行训练，生成全新汪峰歌词的demo  
-wulpus_world 通过计算概率分布，完成wulpus world游戏的demo  
-
 #### evaluation 目录
 ├── src  
 │   ├── evaluation  
